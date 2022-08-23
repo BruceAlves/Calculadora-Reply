@@ -47,8 +47,9 @@ namespace Calculadora_Reply
 
         public double Porcentagem()
         {
-          
-            Resultado = (100.0 / Valor2) * Valor1;
+
+            double desconto = (Valor2 / 100) * Valor1;
+            Resultado = Valor2 - desconto;
 
             return Resultado;
         }
