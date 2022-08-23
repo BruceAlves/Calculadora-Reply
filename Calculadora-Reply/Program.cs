@@ -10,15 +10,21 @@ namespace Calculadora_Reply
     {
         static void Main(string[] args)
         {
-
-            double numero1, numero2;
-
-            Console.WriteLine("Informe Primeiro numero");
-            numero1 = Convert.ToDouble(Console.ReadLine());
-
-           
+            double valor1 = 10, valor2 = 200;
 
 
+            ICalculadora calculo = new Calculadora(valor1, valor2);
+            double resultadoMultiplicacao = calculo.Multiplicar();
+            Console.Write($"O resultado da multiplicação {valor1} e {valor2} é {resultadoMultiplicacao}");
+
+
+            double resultadoSoma = calculo.Somar();
+            Console.WriteLine($"O resultado da soma {valor1} e {valor2} é {resultadoSoma}");
+
+
+
+            double resultadoPorcentagem = calculo.Porcentagem();
+            Console.WriteLine($"O resultado da porcentagem de {valor1} e {valor2} é {resultadoPorcentagem}%");
 
         }
     }

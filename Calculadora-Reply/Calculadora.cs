@@ -6,48 +6,49 @@ using System.Threading.Tasks;
 
 namespace Calculadora_Reply
 {
-    public class Calculadora
+    public class Calculadora : ICalculadora
     {
-        public Calculadora(double n1, double n2)
+        public Calculadora(double valor1, double valor2)
         {
-            this.N1 = n1;
-            this.N2 = n2;
+            this.Valor1 = valor1;
+            this.Valor2 = valor2;
         }
 
-        public double N1 { get; private set; }
-        public double N2 { get; private set; }
+        public double Valor1 { get; private set; }
+        public double Valor2 { get; private set; }
 
 
         private double Resultado { get; set; }
 
         public double Somar()
         {
-            if (N1 < 0 || N2 < 0)
+            if (Valor1 < 0 || Valor2 < 0)
             {
                 throw new Exception("Operação permitida somente com numeros positivos");
             }
 
 
-            Resultado = N1 + N2;
+            Resultado = Valor1 + Valor2;
             return Resultado;
 
         }
 
         public double Multiplicar()
         {
-            if (N2 < 0)
+            if (Valor1 < 0)
             {
                 throw new Exception(" O segundo numero deve ser  positivo");
             }
 
-            Resultado = N1 * N2;
+            Resultado = Valor1 * Valor2;
             return Resultado;
         }
 
 
         public double Porcentagem()
         {
-            Resultado = N1 / N2;
+          
+            Resultado = (100.0 / Valor2) * Valor1;
 
             return Resultado;
         }
